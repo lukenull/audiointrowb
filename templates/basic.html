@@ -20,7 +20,7 @@
         }
         body {
             background-color:black;
-
+            overflow-x:hidden;
         }
         #topbar {
             width:100%;
@@ -54,7 +54,7 @@
         .wordspan {
             display:inline-block;
         }
-      
+    
         .circ1 {
             display:block;
             position:absolute;
@@ -75,8 +75,66 @@
             top:40vh;
             height:20vh;
         }
+        .soundpanel {
+            width:50vw;
+            height:200px;
+            margin-left:10vw;
+            background-color:#000;
+            border: 2px solid #110099;
+            border-radius: 10%;
+            
+            box-shadow: 0px 0px 100px #110099,
+            0px 0px 10px #110099
+
+            
+        }
+        .soundpanel-vis {
+            width: 80%;
+            margin-left: 10%;
+            height: 50%;
+            container-type:inline-size;
+            background-color: #000;
+            margin-top: 5%;
+            border: 2px solid black;
+            border-radius: 5%;
+            box-shadow: 0px 0px 10px #110099;
+            display:flex;
+            
+        }
+        .soundpanel-canvas {
+            width:100%;
+            height:100%;
+            
+        }
+        .soundpanel-time {
+            height:100%;
+            background-color:white;
+            position:relative;
+            right:100%;
+
+            width:2px;
+            z-index:10;
+            box-shadow: 0px 0px 50px white, 0px 0px 5px white;
+            transform:translateX(10cqw);
+            
+        }
+        .soundpanel-button {
+            width:20%;
+            height:20%;
+            margin-left:10%;
+            margin-top:5%;
+            font-size:20px;
+            background-color:#222;
+            border: 2px solid #110099;
+            color: #fff;
+            border-radius:10%;
+        }
+        .soundpanel-button:hover {
+            background-color:#fff
+        }
     </style>
-    <script src="../scripts/home.js" type='module' defer></script>
+    <script src="../scripts/web-audio.js" type="module" defer></script>
+    <script src="../scripts/basic.js" type='module' defer></script>
 </head>
 <body>
     <div id="topbar"></div>
@@ -84,7 +142,15 @@
     <div id="circcont">
         <div class="circ1"></div>
     </div>
-    <canvas id="sinec"></canvas>
+    <!-- <canvas id="sinec"></canvas> -->
+    <div class="soundpanel" style="margin-top:30px;" id="sp-sine1">
+        <div class="soundpanel-vis">
+            
+            <canvas class="soundpanel-canvas"></canvas>
+            <div class="soundpanel-time" id="sinetime1"></div>
+        </div>
+        <button class="soundpanel-button">▷</button>
+    </div>
     
 </body>
 </html>

@@ -16,6 +16,7 @@ const doc={
     circle:qget('.circ1'),
     circcont:dget('circcont'),
     canvas:dget("sinec"),
+    hr:qget("shr"),
 }
 doc.welcome.innerHTML = doc.welcome.textContent
   .split(" ")
@@ -30,8 +31,8 @@ anime({
     translateY: ['100%','0%'],
     opacity: [0, 1],
     easing:'easeOutElastic',
-    duration:600,
-    delay:anime.stagger(20),
+    duration:2500,
+    delay:anime.stagger(30),
 
 });
 async function go() {
@@ -47,6 +48,17 @@ async function go() {
         easing:'easeOutSine',
         duration:2400,
         delay:anime.stagger(400),
+
+    });
+    await wait(1);
+        
+    anime({
+        targets: '.shr',
+        scaleX: ['0%','100%'],
+        opacity: [0, 1],
+        easing:'easeInOutSine',
+        duration:2500,
+        delay:anime.stagger(30),
 
     });
 }
