@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Jersey+10&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        
+        .google-sans-code-regular {
+        font-family: "Google Sans Code", monospace;
+        font-optical-sizing: auto;
+        font-weight: normal;
+        font-style: normal;
+        }
+        body {
+            background-color:black;
+
+        }
+        #topbar {
+            width:100%;
+            height:50px;
+            background-color:#111111;
+            display:flex;
+        }
+        #welcome {
+            display:block;
+            z-index:100;
+            font-family:"Google Sans Code";
+            width:100%;
+            height:50%;
+            justify-content:center;
+            
+            font-size:60px;
+            color:white;
+            text-shadow:0 0 10px #ffffff;
+            text-align:center;
+            word-spacing:20px;
+            padding-top:30vh;
+            white-space:normal;
+            word-wrap:normal;
+            overflow-wrap:normal;
+            
+        }
+        .letter1span {
+            transform:translateY(100%);
+            display:inline-block;
+        }
+        .wordspan {
+            display:inline-block;
+        }
+      
+        .circ1 {
+            display:block;
+            position:absolute;
+            width:100px;
+            height:100px;
+            background-color:#050505;
+            left:calc(50vw - 50px);
+            top:40vh;
+            z-index:-5;
+            border-radius:50%;
+            transform:scale(0);
+        }
+        #sinec {
+            width:100%;
+            z-index:-5;
+            
+            position:absolute;
+            top:40vh;
+            height:20vh;
+        }
+    </style>
+    <script src="../scripts/home.js" type='module' defer></script>
+</head>
+<body>
+    <div id="topbar"></div>
+    <div id="welcome">Welcome to SignalSpace. Here, you can see some descriptions and interactive demonstrations of digital audio.</div>
+    <div id="circcont">
+        <div class="circ1"></div>
+    </div>
+    <canvas id="sinec"></canvas>
+    
+</body>
+</html>
