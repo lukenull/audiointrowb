@@ -38,6 +38,7 @@ export default function soundwave(waveformFunction, duration) {
         buffer:myBuffer,
         duration:duration,
         sourcenode:null,
+        playing:false,
         start:()=>{
             const sourceNode = audioContext.createBufferSource();
             sourceNode.buffer = myBuffer;
@@ -46,7 +47,10 @@ export default function soundwave(waveformFunction, duration) {
             sourceNode.connect(audioContext.destination);
             sourceNode.start(0); // Start immediately
             sounddata.sourcenode=sourceNode;
-            
+            sounddata.playing=true;
+            sourceNode.onended=()=>{
+                sounddata.playing=false;
+            }
         },
         stop:()=>{
             if (sounddata.sourcenode!=null) {
