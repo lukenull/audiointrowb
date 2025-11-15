@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 
-    <title>Sine Waves and Pitches - SignalSpace</title>
+    <title>Synthesis and Music - SignalSpace</title>
     <style>
         
         .google-sans-code-regular {
@@ -48,6 +48,25 @@
             
         }
         .stext {
+            display:block;
+            z-index:100;
+            font-family:"Google Sans Code";
+            width:100%;
+            height:50%;
+            justify-content:center;
+            
+            font-size:30px;
+            color:white;
+            text-shadow:0 0 10px #ffffff;
+            text-align:center;
+            word-spacing:20px;
+            padding-top:10vh;
+            white-space:normal;
+            word-wrap:normal;
+            overflow-wrap:normal;
+            
+        }
+     .btext {
             display:block;
             z-index:100;
             font-family:"Google Sans Code";
@@ -205,12 +224,16 @@
 </head>
 <body>
     <div id="topbar"></div>
-    <div id="mtext" class="mtext">This is a pure tone.</div>
+    <div id="mtext" class="mtext">Many sine waves can be combined to form new sounds.</div>
     <div id="circcont">
         <div class="circ1"></div>
     </div>
     <!-- <canvas id="sinec"></canvas> -->
-    <div class="soundpanel" style="margin-top:30px;" id="sp-sine1">
+   
+     <div class="stext" id="swinfo">Below is a <b>sawtooth wave</b>. This wave is made by adding an infinite number of sine waves together, where each sine wave's frequency is multiplied by its index, and the amplitude is divided by it. Mathematically, it is</div>
+     <div class="btext">$\sin(x)+\frac{1}{2}\sin(2x)+\frac{1}{3}\sin(3x)+...$</div>
+      <div class="soundpanel" style="margin-top:30px;" id="sp-sine1">
+
         <div class="soundpanel-vis">
             
             <canvas class="soundpanel-canvas"></canvas>
@@ -218,7 +241,6 @@
         </div>
         <button class="soundpanel-button">▷</button>
     </div>
-     <div class="stext" id="swinfo">It is technically referred to as a <b>sine wave</b>.</div>
     <div class="stext" id="swinfo2" style="margin-top:20px;">This comes from its shape as the graph of $y = \sin(x)$</b>.</div>
     <img id="sinewv1" src="../images/sinewv1.png">
     <div class="stext" id="swinfo3">The sine wave has a frequency.</div>
